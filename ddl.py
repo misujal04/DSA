@@ -20,7 +20,7 @@ def linklist():
         print(current.data,end=("-->"))
         current=current.next
 
-linklist()
+
 
 def insertnodestart():
     global head
@@ -32,17 +32,30 @@ def insertnodestart():
 
 def insertnodelast():
     new_node2=Node(5)
-    d.next=new_node2
-
+    current=head
+    while current is not None:
+        print(current.data)
+        temp=current
+        current=current.next
+    temp.next=new_node2
+    
 def insertnodepostition():
     new_node3=Node(100)
     n=int(input("Enter the position on which you want to enter the node"))
     current=head
-    for i in range(n-1):
-        while head is not None:
-            print(current.data,end="-->")
+    for i in range(n):
+        while current is not None:
             current=current.next
     current.next=new_node3
-    print(current.data,end="-->")
-    current=current.next
-insertnodepostition()
+    new_node3.next=current.next.next
+
+#linklist()
+insertnodelast()
+linklist()
+
+# n=int(input("Enter the position on which you want to enter the node"))
+# current=head
+# for i in range(n-1):
+#     while current is not None:
+#         current=current.next
+# current
